@@ -12,7 +12,7 @@ export default function Alert() {
     >
       <Container>
         <div className="py-2 text-center text-sm">
-            <p className={'text-base'}>New course out on the 23rd about learning how to grow and peel bananas within 30 days! 🍌</p>
+            <p className={'text-base'}>Informate de todo junto a nosotros</p>
         </div>
       </Container>
     </div>

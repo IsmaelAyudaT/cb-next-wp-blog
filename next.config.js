@@ -6,14 +6,22 @@ if (!process.env.WORDPRESS_API_URL) {
 }
 
 /** @type {import('next').NextConfig} */
-module.exports = {
+const nextConfig = {
+  trailingSlash: true,
   images: {
-    domains: [
-      process.env.WORDPRESS_API_URL.match(/(?!(w+)\.)\w*(?:\w+\.)+\w+/)[0], // Valid WP Image domain.
-      '0.gravatar.com',
-      '1.gravatar.com',
-      '2.gravatar.com',
-      'secure.gravatar.com',
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: process.env.WORDPRESS_API_URL,
+        port: "",
+      },
+      {
+        protocol: "http",
+        hostname: "2.gravatar.com",
+        port: "",
+      },
     ],
   },
-}
+};
+
+module.exports = nextConfig;
